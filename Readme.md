@@ -21,3 +21,25 @@ mvn exec:java "-Dexec.mainClass=org.terminal.Main" "-Dexec.args=https://httpbin.
 ```bash
 mvn exec:java "-Dexec.mainClass=org.terminal.Main" "-Dexec.args=http://localhost:8080/api/health 2000 100 5" 
 ```
+
+#### Example response in terminal:
+```
+========== LOAD TEST REPORT ==========
+URL:          http://localhost:8080/api/health
+Workers:      100
+Requests:     2000
+Successful:   1985
+Failed:       15
+Duration:     4200 ms
+Throughput:   476.19 requests/sec
+Average:      82.50 ms
+P50 latency:  65 ms
+P95 latency:  180 ms
+P99 latency:  350 ms
+
+HTTP STATUS COUNTS:
+200 -> 1985
+500 -> 10
+503 -> 5
+======================================
+```
